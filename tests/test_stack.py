@@ -11,3 +11,8 @@ def point():
 def test_push(point):
     Stack.push(point,2)
     assert point.top == [1, 2, 3, 2]
+
+def test_pop():
+    point1 = Stack()
+    point1.push(2)
+    assert point1.pop() == 2
