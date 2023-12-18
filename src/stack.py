@@ -31,7 +31,10 @@ class Stack:
         new_node = Node(data)
         new_node.next_node = self.top
         self.top = new_node
-        self.all += f'{self.top.data}'
+        if self.all == '':
+            self.all += f'{self.top.data}'
+        else:
+            self.all += f'\n{self.top.data}'
 
     def pop(self):
         """
@@ -43,6 +46,6 @@ class Stack:
             return None
         else:
             popped_node = self.top
-            self.all = self.all[:len(self.all) - (len(str(self.top.data)))]
+            self.all = self.all[:len(self.all) - (len(str(self.top.data))+1)]
             self.top = self.top.next_node
             return popped_node.data

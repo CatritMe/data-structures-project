@@ -10,10 +10,10 @@ def test_push():
     assert str(point) == '2'
 
 def test_pop():
-    point1 = Stack()
-    point1.push(2)
-    assert point1.pop() == 2
+    point.push(2)
+    assert point.pop() == 2
+    assert str(point) == '2'
 
 def test_str():
     point.push(2)
-    assert str(point) == '22'
+    assert str(point) == '2\n2'
