@@ -13,10 +13,14 @@ class Node:
 
 class Stack:
     """Класс для стека"""
+    all = ''
 
     def __init__(self):
         """Конструктор класса Stack"""
         self.top = None
+
+    def __str__(self):
+        return self.all
 
     def push(self, data):
         """
@@ -27,6 +31,7 @@ class Stack:
         new_node = Node(data)
         new_node.next_node = self.top
         self.top = new_node
+        self.all += f'{self.top.data}'
 
     def pop(self):
         """
@@ -38,5 +43,6 @@ class Stack:
             return None
         else:
             popped_node = self.top
+            self.all = self.all[:len(self.all) - (len(str(self.top.data)))]
             self.top = self.top.next_node
             return popped_node.data
